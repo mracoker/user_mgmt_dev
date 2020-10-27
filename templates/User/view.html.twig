@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Welcome {{ app.user.username }}!{% endblock %}
+
+{% block body %}
+    <form method="post">
+
+        {% if app.user %}
+            <div class="mb-3">
+                You are logged in as {{ app.user.username }}, (not {{ app.user.username }} <a href="{{ path('app_logout') }}">Logout</a>)
+            </div>
+        {% endif %}
+
+        <h1 class="h3 mb-3 font-weight-normal">User Details:</h1>
+        <p><a href="/user/create">Add New User</a></p>
+        <p>Id: {{ app.user.id }}</p>
+        <p>Email: {{ app.user.username }}</p>
+        <p>
+            Roles:
+            <ul>
+                {% for role in app.user.roles %}
+                    <li>{{ role }}</li>
+                {% endfor %}
+            </ul>
+        </p>
+
+        <input type="hidden" name="_csrf_token"
+               value="{{ csrf_token('authenticate') }}"
+        >
+    </form>
+{% endblock %}
