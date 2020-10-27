@@ -9,6 +9,9 @@
 /vendor/
 ###< symfony/framework-bundle ###
 
+#PhpStorm Project Files
+.idea/
+
 ###> symfony/phpunit-bridge ###
 .phpunit
 .phpunit.result.cache
