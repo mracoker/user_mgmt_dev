@@ -9,8 +9,11 @@
 /vendor/
 ###< symfony/framework-bundle ###
 
+#local bak folder
+/bak/
+
 #PhpStorm Project Files
-.idea/
+/.idea/
 
 ###> symfony/phpunit-bridge ###
 .phpunit
